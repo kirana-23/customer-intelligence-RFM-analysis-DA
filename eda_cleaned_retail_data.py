@@ -1,5 +1,5 @@
 import pandas as pd
-df=pd.read_csv(r"C:\Users\B KIRANA\Desktop\Cleaned_data_retail")
+df=pd.read_csv(Cleaned_data_retail)
 print(df.head(10))
 #Calculating total revenue
 print("Total Revenue is",round(df["TotalPrice"].sum(),2))
