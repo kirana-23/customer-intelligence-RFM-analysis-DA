@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+
+# Environment variables and credentials
+.env
+.env.*
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Local datasets and exports
+*.xlsx
+*.xls
+*.csv
