@@ -1,249 +1,291 @@
-# Customer Intelligence & RFM Analysis
+# Customer Intelligence & RFM Analysis | Retail Analytics
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-Data%20Analysis-blue?logo=python" />
-  <img src="https://img.shields.io/badge/SQL-Data%20Analysis-orange?logo=mysql" />
-  <img src="https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi" />
-  <img src="https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter" />
-</p>
+\<p align="center">   \<img src="[https://img.shields.io/badge/Python-Data%20Analysis-blue?logo=python](https://img.shields.io/badge/Python-Data%20Analysis-blue?logo=python)" />   \<img src="[https://img.shields.io/badge/MySQL-SQL-orange?logo=mysql](https://img.shields.io/badge/MySQL-SQL-orange?logo=mysql)" />   \<img src="[https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)" />   \<img src="[https://img.shields.io/badge/Dataset-500K%2B%20Transactions-success](https://img.shields.io/badge/Dataset-500K%2B%20Transactions-success)" /> \</p>
 
 ## 1. Project Overview
 
-Understanding customer purchasing behaviour is essential for businesses to improve customer retention, optimize marketing strategies, and maximize revenue.
+Understanding customer purchasing behaviour and identifying high-value customers are essential for improving business performance, customer retention, and revenue growth.
 
-This project focuses on Customer Intelligence and RFM (Recency, Frequency, Monetary) Analysis to evaluate customer purchasing patterns and identify meaningful customer segments.
+This project presents an end-to-end Retail Analytics solution using the **UCI Online Retail II dataset**, containing over 500K transactions.
 
-Using Python, SQL, and Power BI, the project analyzes transactional data, calculates customer-level RFM metrics, and categorizes customers based on their purchasing behaviour and monetary contribution.
+The analysis combines Python-based data cleaning and exploratory data analysis, MySQL-based business queries, and Power BI dashboard development to investigate sales performance, product trends, geographical distribution, and customer purchasing behaviour.
 
-The objective is to transform transactional data into actionable customer insights that help businesses recognize valuable customers, identify customers requiring retention efforts, and develop more targeted marketing strategies.
+A key component of the project is **RFM (Recency, Frequency, Monetary) Analysis**, which evaluates customers based on their purchasing activity and spending patterns to support customer segmentation and retention strategies.
 
-## 2. Business Problem
+The objective is to transform large-scale transactional data into meaningful business insights that support data-driven retail and customer management decisions.
 
-Businesses often treat all customers similarly, despite differences in purchasing frequency, spending patterns, and engagement.
+## 2. Business Objectives
 
-Without customer segmentation, it becomes difficult to:
-
-- Identify high-value customers who contribute significantly to revenue.
-- Recognize loyal customers and frequent purchasers.
-- Detect customers whose purchasing activity has declined.
-- Prioritize customer retention initiatives.
-- Develop targeted marketing and promotional campaigns.
-- Allocate marketing resources effectively.
-
-This project addresses these challenges through data-driven RFM segmentation and customer behaviour analysis.
-
-## 3. Business Objectives
-
-- Analyze customer purchasing behaviour and transaction patterns.
+- Analyze overall retail sales and transaction patterns.
+- Identify top-performing products based on sales performance.
+- Examine sales distribution across geographical locations.
+- Understand customer purchasing behaviour and spending patterns.
 - Calculate Recency, Frequency, and Monetary metrics.
-- Develop RFM-based customer scores and segments.
-- Identify high-value and loyal customer groups.
-- Recognize at-risk and inactive customer segments.
-- Analyze customer contribution to overall revenue.
-- Generate actionable recommendations for customer retention and targeted marketing.
-- Present customer intelligence insights through an interactive Power BI dashboard.
+- Segment customers based on purchasing activity and value.
+- Identify high-value, loyal, and at-risk customer groups.
+- Develop actionable recommendations for customer retention and revenue optimization.
 
-## 4. RFM Analysis Framework
+## 3. Dataset Overview
 
-RFM analysis evaluates customers using three key behavioural metrics.
+The project uses the **Online Retail II dataset from the UCI Machine Learning Repository**.
 
-| Metric | Definition | Business Significance |
-|---|---|---|
-| Recency | Time elapsed since the customer's last purchase | Measures customer activity and engagement |
-| Frequency | Number of purchases made by a customer | Measures purchasing frequency and loyalty |
-| Monetary | Total amount spent by a customer | Measures customer value and revenue contribution |
+The dataset contains transactional records from a UK-based online retail business.
 
-### RFM Scoring
+| Dataset Attribute | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| Dataset           | UCI Online Retail II                              |
+| Records           | 500K+ transactions                                |
+| Data Type         | Retail transaction data                           |
+| Business Domain   | E-commerce / Retail Analytics                     |
+| Analysis Focus    | Sales, Products, Geography, Customer Segmentation |
 
-Customers are evaluated using Recency, Frequency, and Monetary scores to distinguish different purchasing behaviour patterns.
+**Key dataset attributes include:**
 
-The resulting RFM scores support customer segmentation and help identify groups with different retention and marketing priorities.
+- Invoice
+- StockCode
+- Description
+- Quantity
+- InvoiceDate
+- Price
+- Customer ID
+- Country
 
-## 5. Technology Stack
+These attributes support transaction-level analysis, sales calculations, geographical comparisons, and customer-level RFM calculations.
 
-| Technology | Application |
-|---|---|
-| Python | Data cleaning, manipulation, and exploratory analysis |
-| Pandas | Data processing and aggregation |
-| NumPy | Numerical operations |
-| Matplotlib | Data visualization |
-| Seaborn | Statistical visualization |
-| SQL | Customer-level analysis and business queries |
-| Power BI | Interactive customer analytics dashboard |
-| Jupyter Notebook | Analysis and documentation |
+**Dataset Source:** [UCI Machine Learning Repository – Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 
-## 6. Project Workflow
+## 4. Technology Stack
 
-### 6.1 Data Understanding
-- Examined the structure and dimensions of the customer and transaction datasets.
-- Reviewed customer attributes and transaction-level information.
-- Identified relevant fields required for customer analysis.
-- Examined data types and data quality.
+| Technology | Application                               |
+| ---------- | ----------------------------------------- |
+| Python     | Data cleaning and exploratory analysis    |
+| Pandas     | Data manipulation and transformation      |
+| NumPy      | Numerical operations                      |
+| Matplotlib | Data visualization                        |
+| Seaborn    | Exploratory and statistical visualization |
+| MySQL      | Database management and business queries  |
+| Power BI   | Interactive retail analytics dashboard    |
 
-### 6.2 Data Cleaning and Preparation
-- Checked for missing values and duplicate records.
-- Reviewed data consistency and validity.
-- Prepared transaction dates and numerical fields for analysis.
-- Combined relevant customer and transaction information where required.
-- Prepared structured data for customer-level aggregation.
+## 5. Project Workflow
 
-### 6.3 Exploratory Data Analysis (EDA)
-Performed exploratory analysis to understand customer purchasing behaviour and business performance.
+### 5.1 Data Cleaning and Preparation
 
-Analysis areas included:
+Performed data preparation using Python to improve data quality and ensure consistency for downstream analysis.
+
+Key activities include:
+
+- Inspecting dataset structure and data types.
+- Identifying and handling missing values.
+- Examining duplicate transaction records.
+- Reviewing invalid and inconsistent transaction values.
+- Preparing date and numerical columns.
+- Creating a cleaned dataset for further analysis.
+
+### 5.2 Exploratory Data Analysis (EDA)
+
+Conducted exploratory analysis to understand overall retail performance and purchasing patterns.
+
+Analysis areas include:
+
+- Overall sales performance.
+- Transaction and order trends.
+- Product-level sales distribution.
+- Geographical sales distribution.
 - Customer purchasing patterns.
-- Transaction and revenue distribution.
-- Customer spending behaviour.
-- Purchase frequency.
-- Customer-level revenue contribution.
-- Distribution of customer activity.
+- Revenue contribution across different categories.
 
-### 6.4 RFM Feature Engineering
-Calculated customer-level RFM metrics:
+### 5.3 MySQL Data Integration
 
-- **Recency:** Time since the most recent purchase.
-- **Frequency:** Total number of purchases.
-- **Monetary:** Total purchase value.
+Integrated the prepared retail data into MySQL for structured querying and business analysis.
 
-These metrics provide a structured representation of customer purchasing behaviour.
+The database workflow includes:
 
-### 6.5 Customer Segmentation
-Applied RFM scoring to categorize customers according to their purchasing activity and value.
+- Importing prepared retail data into MySQL.
+- Organizing transactional data for querying.
+- Executing SQL queries to extract business insights.
+- Analyzing sales, products, geography, and customer-related metrics.
 
-The segmentation supports the identification of:
-- High-value customers.
-- Loyal and frequent customers.
-- Potential customers with growth opportunities.
-- Customers requiring retention efforts.
-- Inactive or lost customers.
+### 5.4 SQL-Based Business Analysis
 
-*The final segment names and scoring rules should match the implementation in the notebook.*
+Used SQL to perform business-oriented analysis on retail transactions.
 
-### 6.6 SQL-Based Analysis
-Used SQL to explore customer and transaction data through business-focused queries.
+Key analysis areas include:
 
-Analysis areas included:
-- Customer purchasing frequency.
-- Customer spending patterns.
-- Revenue contribution.
+- Sales performance analysis.
+- Product-level revenue analysis.
+- Customer purchasing behaviour.
+- Geographical sales comparisons.
 - Customer-level aggregations.
-- RFM-related business analysis.
+- RFM-related customer analysis.
 
-### 6.7 Power BI Dashboard Development
-Developed an interactive dashboard to communicate customer intelligence insights.
+### 5.5 RFM Analysis and Customer Segmentation
 
-The dashboard supports:
-- Customer segmentation analysis.
-- RFM metric exploration.
-- Customer value comparison.
-- Purchasing behaviour analysis.
-- Revenue contribution analysis.
-- Business-oriented customer insights.
+Applied the RFM framework to evaluate customer value and purchasing behaviour.
+
+The analysis uses three fundamental metrics:
+
+| Metric    | Definition                              | Business Interpretation                                     |
+| --------- | --------------------------------------- | ----------------------------------------------------------- |
+| Recency   | Time since the customer's last purchase | Indicates how recently a customer engaged with the business |
+| Frequency | Number of purchases made by a customer  | Indicates customer purchasing frequency                     |
+| Monetary  | Total amount spent by a customer        | Measures customer spending contribution                     |
+
+RFM scoring provides a structured approach to grouping customers according to their purchasing behaviour.
+
+Customer segmentation helps businesses identify valuable customers, recognize customers who may require retention efforts, and develop targeted marketing strategies.
+
+### 5.6 Power BI Dashboard Development
+
+Developed an interactive Power BI dashboard to present retail performance and customer intelligence insights.
+
+The dashboard is organized into four analytical sections:
+
+- **Sales Analysis:** Overall sales performance and revenue trends.
+- **Product Analysis:** Product-level sales and purchasing patterns.
+- **Geographical Analysis:** Sales distribution across countries and locations.
+- **RFM Analysis:** Customer segmentation and purchasing behaviour.
+
+## 6. Dashboard Preview
+
+### Page 1 – Sales Analysis
+
+
+
+### Page 2 – Product Analysis
+
+
+
+### Page 3 – Geographical Analysis
+
+
+
+### Page 4 – RFM Customer Segmentation
+
+
 
 ## 7. Key Business Analysis Areas
 
-| Analysis Area | Business Purpose |
-|---|---|
-| Recency Analysis | Identify recently active and inactive customers |
-| Frequency Analysis | Understand customer purchase frequency |
-| Monetary Analysis | Evaluate customer spending and value |
-| RFM Segmentation | Group customers based on purchasing behaviour |
-| Customer Value Analysis | Identify valuable customer groups |
-| Revenue Contribution | Understand how customers contribute to revenue |
-| Retention Analysis | Identify customers who may require engagement |
-| Purchasing Behaviour | Understand customer transaction patterns |
+| Analysis Area         | Business Purpose                                   |
+| --------------------- | -------------------------------------------------- |
+| Sales Analysis        | Understand overall revenue performance             |
+| Product Analysis      | Identify products contributing to sales            |
+| Geographical Analysis | Evaluate sales distribution by location            |
+| Recency Analysis      | Identify recently active and inactive customers    |
+| Frequency Analysis    | Understand customer purchasing frequency           |
+| Monetary Analysis     | Evaluate customer spending contribution            |
+| RFM Segmentation      | Group customers based on purchasing behaviour      |
+| Customer Intelligence | Support customer retention and marketing decisions |
 
 ## 8. Business Recommendations
 
-- **Customer Retention:** Develop targeted retention campaigns for customers showing declining purchasing activity.
-- **Loyalty Programs:** Reward frequent and high-value customers through personalized benefits.
-- **Targeted Marketing:** Design segment-specific promotional campaigns instead of applying the same strategy to all customers.
-- **Customer Reactivation:** Introduce win-back campaigns for inactive customers.
-- **Revenue Optimization:** Prioritize customer groups with strong monetary contributions.
-- **Customer Engagement:** Monitor purchasing activity and RFM metrics regularly to identify changes in customer behaviour.
+- **Customer Retention:** Prioritize customers showing declining purchasing activity through targeted engagement campaigns.
+- **Customer Loyalty:** Develop loyalty initiatives for frequent and high-value customers.
+- **Targeted Marketing:** Create personalized promotions based on customer segments.
+- **Product Strategy:** Use product performance analysis to support inventory and merchandising decisions.
+- **Geographical Strategy:** Evaluate regional sales patterns to identify opportunities for market expansion.
+- **Revenue Optimization:** Focus on customer groups and products that contribute meaningfully to business revenue.
 
-## 9. Dashboard Preview
-
-The Power BI dashboard presents customer segmentation and purchasing behaviour through interactive visualizations.
-
-![Customer Intelligence RFM Dashboard](dashboard.png)
-
-## 10. Repository Structure
+## 9. Repository Structure
 
 ```text
 customer-intelligence-RFM-analysis-DA/
 │
-├── Customer_Intelligence_RFM_Analysis.ipynb
-├── customer_data.csv
-├── customer_transactions.csv
-├── customer_analysis.sql
-├── customer_rfm_dashboard.pbix
-├── dashboard.png
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── analysis_queries.sql
+├── data_cleaning.py
+├── eda_cleaned_retail_data.py
+├── import_data_mysql.py
+│
+├── page1_sales.png
+├── page2_products.png
+├── page3_geography.png
+├── page4_rfm.png
+│
+├── retail project.pbix
+└── README.md
 ```
 
-*Replace the example filenames above with the exact filenames present in your repository.*
+## 10. How to Run the Project
 
-## 11. How to Run the Project
-
-### Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/kirana-23/customer-intelligence-RFM-analysis-DA.git
 ```
 
-### Navigate to the Project Directory
+### Step 2: Navigate to the Project Directory
 
 ```bash
 cd customer-intelligence-RFM-analysis-DA
 ```
 
-### Install Dependencies
+### Step 3: Install Python Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn mysql-connector-python
 ```
 
-### Run the Python Notebook
+Install any additional libraries required by the Python scripts.
+
+### Step 4: Download the Dataset
+
+Download the UCI Online Retail II dataset from:
+
+[UCI Online Retail II Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+
+Place the downloaded dataset in your working directory and update the file path in `data_cleaning.py` as required.
+
+### Step 5: Run Data Cleaning
 
 ```bash
-jupyter notebook
+python data_cleaning.py
 ```
 
-Open the RFM analysis notebook and execute the cells.
+### Step 6: Perform Exploratory Data Analysis
 
-Ensure the required datasets are available in the paths specified in the notebook.
+```bash
+python eda_cleaned_retail_data.py
+```
 
-### Run SQL Analysis
+### Step 7: Import Data into MySQL
 
-Open the SQL script using MySQL Workbench or another compatible SQL environment and execute the customer analysis queries against the prepared dataset.
+Configure your MySQL connection details in `import_data_mysql.py` and execute:
 
-### Explore the Power BI Dashboard
+```bash
+python import_data_mysql.py
+```
 
-Open the Power BI file using Power BI Desktop to explore customer segmentation and purchasing behaviour.
+### Step 8: Execute SQL Analysis
 
-## 12. Project Deliverables
+Open `analysis_queries.sql` in MySQL Workbench and execute the queries against the imported retail database.
 
-| Deliverable | Description |
-|---|---|
-| Python Notebook | Data preparation, EDA, and RFM analysis |
-| SQL Script | Customer-level business analysis |
-| Prepared Dataset | Structured data used for analysis |
-| Power BI Dashboard | Interactive customer intelligence reporting |
-| README | Project documentation |
+### Step 9: Explore the Power BI Dashboard
 
-## 13. Future Enhancements
+Open `retail project.pbix` using Power BI Desktop to explore the four dashboard pages.
+
+## 11. Project Deliverables
+
+| File                         | Description                        |
+| ---------------------------- | ---------------------------------- |
+| `data_cleaning.py`           | Data cleaning and preparation      |
+| `eda_cleaned_retail_data.py` | Exploratory data analysis          |
+| `import_data_mysql.py`       | MySQL data import script           |
+| `analysis_queries.sql`       | SQL business analysis              |
+| `retail project.pbix`        | Interactive Power BI dashboard     |
+| `page1_sales.png`            | Sales dashboard preview            |
+| `page2_products.png`         | Product dashboard preview          |
+| `page3_geography.png`        | Geographical dashboard preview     |
+| `page4_rfm.png`              | RFM segmentation dashboard preview |
+
+## 12. Future Enhancements
 
 - Integrate customer lifetime value (CLV) analysis.
-- Explore customer purchase trends over time.
-- Develop customer churn prediction capabilities.
-- Evaluate advanced customer segmentation techniques.
-- Monitor changes in customer segment distribution over time.
-- Expand dashboard reporting with additional customer KPIs.
+- Develop customer churn prediction models.
+- Explore customer purchasing trends over time.
+- Introduce advanced customer segmentation techniques.
+- Build customer retention and cohort analysis.
+- Enhance dashboard reporting with additional retail KPIs.
 
-## 14. Author
+## 13. Author
 
 **Kirana B**
 
@@ -251,4 +293,4 @@ GitHub: [kirana-23](https://github.com/kirana-23)
 
 ---
 
-*This project demonstrates the application of Python, SQL, RFM modelling, and Power BI to convert customer transaction data into actionable business intelligence.*
+*This project demonstrates the practical application of Python, SQL, and Power BI in retail analytics, customer intelligence, and RFM-based customer segmentation to support data-driven business decisions.*
