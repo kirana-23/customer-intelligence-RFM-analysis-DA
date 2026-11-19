@@ -48,17 +48,21 @@ The dataset contains transactional records from a UK-based online retail busines
 - Customer ID
 - Country
 
+These attributes support transaction-level analysis, sales calculations, geographical comparisons, and customer-level RFM calculations.
+
 **Dataset Source:** [UCI Machine Learning Repository – Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 
 ## 4. Tools & Technologies
 
-- **Python:** Data cleaning, manipulation, and exploratory data analysis.
-- **Pandas:** Data processing and transformation.
-- **NumPy:** Numerical operations.
-- **Matplotlib:** Data visualization.
-- **Seaborn:** Statistical visualization.
-- **MySQL:** Database management and SQL-based business analysis.
-- **Power BI:** Interactive dashboard development.
+| Technology | Application |
+|---|---|
+| Python | Data cleaning and exploratory data analysis |
+| Pandas | Data manipulation and transformation |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization |
+| MySQL | Database management and SQL-based business analysis |
+| Power BI | Interactive retail analytics dashboard |
 
 ## 5. Project Workflow
 
@@ -131,7 +135,27 @@ Developed an interactive Power BI dashboard organized into four analytical secti
 - **Geographical Analysis:** Sales distribution across countries and locations.
 - **RFM Analysis:** Customer segmentation and purchasing behaviour.
 
-## 6. Key Business Analysis Areas
+## 6. Power BI Dashboard Preview
+
+The interactive dashboard presents retail performance and customer intelligence insights through four dedicated analytical pages.
+
+### Page 1 – Sales Analysis
+
+![Sales Analysis Dashboard](page1_sales.png)
+
+### Page 2 – Product Analysis
+
+![Product Analysis Dashboard](page2_products.png)
+
+### Page 3 – Geographical Analysis
+
+![Geographical Analysis Dashboard](page3_geography.png)
+
+### Page 4 – RFM Customer Segmentation
+
+![RFM Customer Segmentation Dashboard](page4_rfm.png)
+
+## 7. Key Business Analysis Areas
 
 | Analysis Area | Business Purpose |
 |---|---|
@@ -144,7 +168,7 @@ Developed an interactive Power BI dashboard organized into four analytical secti
 | RFM Segmentation | Group customers based on purchasing behaviour |
 | Customer Intelligence | Support retention and marketing decisions |
 
-## 7. Key Business Recommendations
+## 8. Business Recommendations
 
 - **Customer Retention:** Develop targeted engagement campaigns for customers showing declining purchasing activity.
 - **Customer Loyalty:** Introduce loyalty initiatives for frequent and high-value customers.
@@ -153,7 +177,7 @@ Developed an interactive Power BI dashboard organized into four analytical secti
 - **Geographical Strategy:** Evaluate regional sales patterns to identify potential market opportunities.
 - **Revenue Optimization:** Prioritize customer groups and products that contribute significantly to business revenue.
 
-## 8. Repository Structure
+## 9. Repository Structure
 
 ```text
 customer-intelligence-RFM-analysis-DA/
@@ -172,7 +196,7 @@ customer-intelligence-RFM-analysis-DA/
 └── README.md
 ```
 
-## 9. How to Run the Project
+## 10. How to Run the Project
 
 ### Step 1: Clone the Repository
 
@@ -196,9 +220,9 @@ pip install pandas numpy matplotlib seaborn mysql-connector-python
 
 Download the UCI Online Retail II dataset:
 
-[Download Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
+[UCI Online Retail II Dataset](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 
-Place the dataset in your working directory and update the file path in `data_cleaning.py` if required.
+Place the downloaded dataset in your working directory and update the file path in `data_cleaning.py` if required.
 
 ### Step 5: Execute Data Cleaning
 
@@ -228,7 +252,7 @@ Open `analysis_queries.sql` in MySQL Workbench and execute the queries against t
 
 Open `retail project.pbix` using Power BI Desktop to explore the interactive retail analytics dashboard.
 
-## 10. Project Deliverables
+## 11. Project Deliverables
 
 | File | Description |
 |---|---|
@@ -242,7 +266,7 @@ Open `retail project.pbix` using Power BI Desktop to explore the interactive ret
 | `page3_geography.png` | Geographical dashboard screenshot |
 | `page4_rfm.png` | RFM dashboard screenshot |
 
-## 11. Future Enhancements
+## 12. Future Enhancements
 
 - Integrate Customer Lifetime Value (CLV) analysis.
 - Develop customer churn prediction models.
@@ -251,7 +275,7 @@ Open `retail project.pbix` using Power BI Desktop to explore the interactive ret
 - Implement customer retention and cohort analysis.
 - Enhance dashboard reporting with additional retail KPIs.
 
-## 12. Author
+## 13. Author
 
 **Kirana B**
 
