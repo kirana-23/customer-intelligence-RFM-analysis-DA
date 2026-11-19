@@ -1,5 +1,5 @@
 import pandas as pd
-df=pd.read_csv(r"C:\Users\B KIRANA\Downloads\archive (3)\online_retail_II.csv") #path to csv
+df=pd.read_csv(online_retail_II.csv) #path to csv
 print(df.head(10).to_string()) #checking whether data is loaded
 print(df.columns.tolist()) #to know about the columns
 print(df.info()) #to know about the count and dtype
